@@ -1,9 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
+
+//componentes
+import Home from './pages/Home/'
+
+//estilizacao global
+import "./index.css";
+import ListaServicos from './pages/ListaServicos';
+
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    {/* <Home /> */}
+    <ListaServicos />
   </React.StrictMode>,
 )
