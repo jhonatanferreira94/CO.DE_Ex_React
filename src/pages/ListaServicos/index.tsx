@@ -1,16 +1,48 @@
+//estilizacao
 import "./style.css";
 
-import imgLogo from "../../assets/images/logo.svg";
-import iconFace from "../../assets/images/facebook.svg";
-import iconInsta from "../../assets/images/instagram.svg";
-import iconLinkedin from "../../assets/images/linkedin.svg";
+//components
+import CardServico from "../../components/CardServico";
+
+//hoks
+import { useState } from "react";
 
 
 function ListaServicos() {
 
-    return (
-      
+    //STATE DEVS
 
+    const [servicos, setServicos] = useState <any[]>([
+        {
+          titulo: "Desenvolvimento de site institucional - Gateway de Pagamento / Fintech",
+          descricao: "Desenvolver um site responsivo que seja utilizado como uma plataforma de apresentação do nosso gateway de pagamento. O objetivo principal deste projeto é criar um site atraente e informativo, que demonstre as funcionalidades e benefícios do nosso gateway de pagamento para potenciais clientes.",
+          proposta: 1300,
+          techs: [
+            "HTML",
+            "CSS",
+            "REACT"
+          ]
+        },
+        {
+          titulo: "Bot telegram Pagamento",
+          descricao: "Preciso fazer um código em python para um bot do telegram. O bot será para solicitação de pagamento.",
+          proposta: 2400,
+          techs: [
+            "PYTHON"
+          ]
+        },
+        {
+          titulo: "Caixa Rápido",
+          descricao: "Preciso fazer um software que permita ao usuário fazer o upload de seu extrato bancário em formato( ofx). Dentro do software o mesmo poderá categorizar todas as suas receitas e despesas, tendo categorias sugeridas pelo software e permitindo também personalizações. Após o lançamento de vários extratos o software irá entender que são lançamentos parecidos e fará a categorização de maneira automática, cabendo ao usuário somente categorizar as receitas e despesas que não se repetem. Após a categorização o software irá emitir gráficos e relatórios baseados na categorização das contas.",
+          proposta: 1200,
+          techs: [
+            "PYTHON"
+          ]
+        }
+      ])
+
+    return (
+    
             <>
                 <div id="sombra"></div>
                 
@@ -31,44 +63,21 @@ function ListaServicos() {
                             </form>
                             <div className="wrapper_lista">
                                 <ul>
-                                    <li>
-                                        <div className="servico">
-                                            <div className="topo_servico">
-                                                <h3>Desenvolvimento de site institucional - Gateway de Pagamento / Fintech</h3>
-                                                <span>R$ 1300,00</span>
-                                            </div>
-                                            <p>Desenvolver um site responsivo que seja utilizado como uma plataforma de apresentação do nosso gateway de pagamento. O objetivo principal deste projeto é criar um site atraente e informativo, que demonstre as funcionalidades e benefícios do nosso gateway de pagamento para potenciais clientes.</p>
-                                            <div className="techs">
-                                                <span>HTML</span>
-                                                <span>CSS</span>
-                                                <span>React</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="servico">
-                                            <div className="topo_servico">
-                                                <h3>Bot telegram Pagamento</h3>
-                                                <span>R$ 2400,00</span>
-                                            </div>
-                                            <p>Preciso fazer um código em python para um bot do telegram. O bot será para solicitação de pagamento.</p>
-                                            <div className="techs">
-                                                <span>Python</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="servico">
-                                            <div className="topo_servico">
-                                                <h3>Caixa Rápido</h3>
-                                                <span>R$ 1200,00</span>
-                                            </div>
-                                            <p>Preciso fazer um  software que permita ao usuário fazer o upload de seu extrato bancário em formato( ofx). Dentro do software o mesmo poderá categorizar todas as suas receitas e despesas, tendo categorias sugeridas pelo software e permitindo também personalizações. Após o lançamento de vários extratos o software irá entender que são lançamentos parecidos e fará a categorização de maneira automática, cabendo ao usuário somente categorizar as receitas e despesas que não se repetem. Após a categorização o software irá emitir gráficos e relatórios baseados na categorização das contas.</p>
-                                            <div className="techs">
-                                                <span>Python</span>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    { 
+                                    servicos.map((servico:any, indice:number) => {
+                                        return <li key={indice}>
+                                            <CardServico
+                                            titulo={servico.titulo}
+                                            descricao={servico.descricao}
+                                            proposta={servico.proposta}
+                                            listatechs={servico.techs}
+
+                                            />
+                                            </li>
+                                    })
+
+
+                                    }
                                 </ul>
                             </div>
                         </div>

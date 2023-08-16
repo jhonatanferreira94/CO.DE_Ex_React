@@ -29,7 +29,8 @@ function Footer() {
                         <ul>
                             <li><Link to={"/"}>Login</Link></li>
                             <li><Link to={"/"}>Home</Link></li>
-                            <li><Link to={"/"}>Listar Serviços</Link></li>
+                            <li><Link to={"lista/servicos"}>Listar Serviços</Link></li>
+                            <li><Link to={"lista/devs"}>Listar de Desenvolvedores</Link></li>
                             <li><Link to={"/"}>Cadastrar Cliente</Link></li>
                             <li><Link to={"/"}>Cadastrar Desenvolvedor</Link></li>
                         </ul>
