@@ -39,7 +39,17 @@ function ListaServicos() {
             "PYTHON"
           ]
         }
-      ])
+      ]);
+
+      const [listaServicosFiltrados, setListaServicosFiltrados] = useState<any[]>(servicos);
+      const [skillDigitadaServicos, setSkillDigitadaServicos] = useState<string>("");
+
+      //funcao onde pega o que o usuario digitou
+      function verificarCampoSkillServicos(event: any) {
+        if (event.target.value === "") {
+          setListaServicosFiltrados(servicos);
+        } setSkillDigitadaServicos(event.target.value);
+      }
 
     return (
     
