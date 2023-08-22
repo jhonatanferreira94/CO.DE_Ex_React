@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import api from "../../utils/api";
 
 
+
 function ListaServicos() {
 
   //STATE DEVS
@@ -49,9 +50,9 @@ function ListaServicos() {
     if (servicosFiltrados.length === 0) {
       alert("Nenhum desenvolvedor(a) com essa skill :(")
     } else {
-              //atribui valor de devs filtrado, ao state ListaDevsFiltrados 
-              setServicos(servicosFiltrados);
-          }
+      //atribui valor de devs filtrado, ao state ListaDevsFiltrados 
+      setServicos(servicosFiltrados);
+    }
   }
 
   function listarServicos() {
@@ -86,7 +87,7 @@ function ListaServicos() {
               <div className="wrapper_form">
                 <label htmlFor="busca">Procurar serviços</label>
                 <div className="campo-label">
-                  <input type="search" name="campo-busca" id="busca" placeholder="Buscar serviços por tecnologias..." onChange={verificarCampoSkillServicos}/>
+                  <input type="search" name="campo-busca" id="busca" placeholder="Buscar serviços por tecnologias..." onChange={verificarCampoSkillServicos} />
                   <button type="submit">Buscar</button>
                 </div>
               </div>
@@ -97,11 +98,11 @@ function ListaServicos() {
                   servicos.map((servico: any, indice: number) => {
                     return <li key={indice}>
                       <CardServico
+                        id={servico.id}
                         titulo={servico.nome}
                         descricao={servico.descricao}
                         proposta={servico.valor}
                         listatechs={servico.techs}
-
                       />
                     </li>
                   })
