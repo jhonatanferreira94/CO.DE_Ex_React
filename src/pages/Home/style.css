@@ -23,7 +23,7 @@ body {
     margin: 0 auto;
 }
 
-h1 {
+#h1 {
     position: absolute;
     left: -999em;
     width: 1em;

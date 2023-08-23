@@ -17,7 +17,7 @@ function Home() {
             {/* <Header/> */}
           
             <main id="main">
-                <h1>página inicial VSconnect</h1>
+                <h1 id="h1">página inicial VSconnect</h1>
                 <section className="banner">
                     <div className="banner_conteudo">
                         <span className="banner_slogan_l1">VSConnect</span>

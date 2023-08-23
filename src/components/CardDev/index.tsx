@@ -6,6 +6,15 @@ import "./style.css";
 import { Link } from "react-router-dom";
 
 function CardDev(props: any) {
+
+    function verificarListaTechs() {
+        if (typeof props.listaTechs === "string") {
+            return JSON.parse(props.listaTechs);
+        } else {
+            return props.listaTechs;
+        }
+    }
+    
     return (
 
         <div className="dev">
@@ -22,7 +31,7 @@ function CardDev(props: any) {
             </div>
             <div className="techs">
                 {
-                    props.listatechs.map((tech: string, indice: number) => {
+                    verificarListaTechs().map((tech: string, indice: number) => {
                         return <span key={indice}>{tech}</span>
                     })
                 }

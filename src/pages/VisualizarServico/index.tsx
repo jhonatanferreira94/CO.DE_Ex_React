@@ -40,11 +40,11 @@ function VisualizarServico() {
     return (
         <main id="main_visualizarservico">
             <div className="container">
-                <h1>Serviço - {nome}</h1>
+                <h1>Serviço</h1>
                 <div className="servico">
                     <div className="topo_servico">
                         <h2>{nome}</h2>
-                        <span>{proposta}</span>
+                        <span>R$ {proposta}</span>
                     </div>
                     <p>{descricao}</p>
                     
